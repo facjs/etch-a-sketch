@@ -4,8 +4,10 @@ const blackButton = document.querySelector('.black__mode');
 const grayButton = document.querySelector('.gray__mode');
 const clearButton = document.querySelector('clear__board');
 const erasorButton = document.querySelector('.erasor');
+const errorMessage = document.querySelector('.error__message');
 
 let color = '#000';
+errorMessage.style.display = 'none';
 
 const createBoard = (size) => {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -45,8 +47,9 @@ const colorSquare = (choice) => {
 const changeSize = (amount) => {
     if (amount >= 2 && amount <= 100) {
         createBoard(amount);
+        errorMessage.style.display = 'none';
     } else {
-        console.log('ERROR! Too many squares');
+        errorMessage.style.display = 'flex';
     }
 };
 
