@@ -17,15 +17,16 @@
                 <button class="rainbow__mode" onclick="colorSquare('random')">Rainbow Mode</button>
                 <button class="black__mode" onclick="colorSquare('#000')">Black Mode</button>
                 <button class="gray__mode" onclick="colorSquare('#d3d3d3')">Gray Mode</button>
-                <button class="clear__board" onclick="resetBoard()">Clear Grid</button>
+                <button class="clear__board" onclick="resetBoard()">Reset Grid</button>
                 <button class="erasor" onclick="colorSquare('#fff')">Erasor</button>
                 <input
                     type="text"
                     placeholder="Size (2 to 100)"
                     value="16"
                     onchange="changeSize(this.value)"
+                    id="input-size"
                 />
-                <button>Set</button>
+                <button class="set__button">Set</button>
                 <div class="error__message">
                     <p>Input must be between 2 and 100</p>
                 </div>

@@ -1,10 +1,7 @@
 const board = document.getElementById('board');
-const rainbowButton = document.querySelector('.rainbow__mode');
-const blackButton = document.querySelector('.black__mode');
-const grayButton = document.querySelector('.gray__mode');
-const clearButton = document.querySelector('clear__board');
-const erasorButton = document.querySelector('.erasor');
 const errorMessage = document.querySelector('.error__message');
+const inputSize = document.getElementById('input-size');
+const setButton = document.querySelector('.set__button');
 
 let color = '#000';
 errorMessage.style.display = 'none';
@@ -22,6 +19,11 @@ const createBoard = (size) => {
             } else {
                 square.style.backgroundColor = color;
             }
+        });
+
+        setButton.addEventListener('click', () => {
+            square.style.backgroundColor = '#fff';
+            inputSize.value = '';
         });
 
         square.style.backgroundColor = '#fff';
@@ -56,5 +58,5 @@ const changeSize = (amount) => {
 const resetBoard = () => {
     let singleDivs = board.querySelectorAll('div');
     singleDivs.forEach((div) => div.remove());
-    createBoard(16);
+    changeSize(16);
 };
