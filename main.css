@@ -37,16 +37,14 @@ html {
 .settings {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
     justify-content: center;
-    align-items: center;
 }
 
-#grid {
-    height: 500px;
-    width: 500px;
+#board {
+    height: 600px;
+    width: 600px;
     display: grid;
-    background-color: hsl(0, 0%, 78%);
     border: 1px solid hsl(0, 0%, 20%);
 }
 
@@ -63,10 +61,22 @@ button:hover {
     background-color: hsl(300, 1%, 62%);
 }
 
-input[type='color'] {
-    width: 200px;
+input {
     height: 50px;
+    width: 200px;
+}
+
+input[type='color'] {
     cursor: crosshair;
     outline: none;
     border: none;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+input[type='text'] {
+    text-align: center;
+    border: 1px solid black;
 }
