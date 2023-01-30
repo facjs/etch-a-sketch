@@ -13,6 +13,7 @@ const createBoard = (size) => {
 
     for (let i = 0; i < size * size; i++) {
         let square = document.createElement('div');
+
         square.addEventListener('mouseover', () => {
             if (color == 'random') {
                 square.style.backgroundColor = getRandomColor();
@@ -20,6 +21,7 @@ const createBoard = (size) => {
                 square.style.backgroundColor = color;
             }
         });
+
         square.style.backgroundColor = '#fff';
         board.appendChild(square);
     }
@@ -46,4 +48,10 @@ const changeSize = (amount) => {
     } else {
         console.log('ERROR! Too many squares');
     }
+};
+
+const resetBoard = () => {
+    let singleDivs = board.querySelectorAll('div');
+    singleDivs.forEach((div) => div.remove());
+    createBoard(16);
 };
